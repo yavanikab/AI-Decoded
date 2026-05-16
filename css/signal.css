@@ -1,0 +1,50 @@
+:root {
+  --color-bg: #080808;
+  --color-bg2: #101010;
+  --color-bg3: #181818;
+  --color-bg4: #202020;
+  --color-card: #2A2A2A;
+
+  --color-border: rgba(255, 255, 255, 0.06);
+  --color-border-mid: rgba(255, 255, 255, 0.08);
+  --color-border-crisp: rgba(255, 255, 255, 0.15);
+
+  --color-accent: #ffd04c;
+  --color-accent-g: color-mix(in srgb, var(--color-accent) 8%, transparent);
+  --color-accent-t04: color-mix(in srgb, var(--color-accent) 4%, transparent);
+  --color-accent-t06: color-mix(in srgb, var(--color-accent) 6%, transparent);
+  --color-accent-t07: color-mix(in srgb, var(--color-accent) 7%, transparent);
+  --color-accent-t10: color-mix(in srgb, var(--color-accent) 10%, transparent);
+  --color-accent-t12: color-mix(in srgb, var(--color-accent) 12%, transparent);
+  --color-accent-t14: color-mix(in srgb, var(--color-accent) 14%, transparent);
+  --color-accent-t18: color-mix(in srgb, var(--color-accent) 18%, transparent);
+  --color-accent-t20: color-mix(in srgb, var(--color-accent) 20%, transparent);
+  --color-accent-t30: color-mix(in srgb, var(--color-accent) 30%, transparent);
+
+  --color-beg: #A0A0A0;
+  --color-amber: #C0A030;
+  --color-coral: #60A880;
+  --color-sky: #a8a29e;
+
+  --color-amber-g: color-mix(in srgb, var(--color-amber) 8%, transparent);
+  --color-sky-g: color-mix(in srgb, var(--color-amber) 8%, transparent);
+  --color-neutral-t04: color-mix(in srgb, var(--color-amber) 4%, transparent);
+  --color-neutral-t06: color-mix(in srgb, var(--color-amber) 6%, transparent);
+  --color-neutral-t10: color-mix(in srgb, var(--color-amber) 10%, transparent);
+  --color-neutral-t12: color-mix(in srgb, var(--color-amber) 12%, transparent);
+  --color-neutral-t14: color-mix(in srgb, var(--color-amber) 14%, transparent);
+  --color-neutral-t15: color-mix(in srgb, var(--color-amber) 15%, transparent);
+  --color-neutral-t18: color-mix(in srgb, var(--color-amber) 18%, transparent);
+  --color-neutral-t20: color-mix(in srgb, var(--color-amber) 20%, transparent);
+  --color-neutral-t30: color-mix(in srgb, var(--color-amber) 30%, transparent);
+  --color-neutral-t50: color-mix(in srgb, var(--color-amber) 50%, transparent);
+
+  --color-shadow: rgba(0, 0, 0, 0.4);
+
+  --color-white: #f0f0f0;
+  --color-text: #e2e8f0;
+  --color-body-text: #cdd0d3;
+  --color-text2: #888888;
+  --color-muted: #484848;
+  --color-muted2: #2a2a2a;
+}

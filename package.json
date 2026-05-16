@@ -1,0 +1,15 @@
+﻿{
+  "name": "ai-demystified",
+  "version": "1.0.0",
+  "description": "Interactive AI explainer website  -  from basics to advanced concepts",
+  "scripts": {},
+  "private": true,
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.2.4",
+    "tailwindcss": "^4.2.4"
+  }
+}

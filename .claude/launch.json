@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "ai-decoded",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "4400", "--directory", "."],
+      "port": 4400
+    }
+  ]
+}

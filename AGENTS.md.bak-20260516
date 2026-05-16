@@ -1,0 +1,75 @@
+# AI Decoded — Project Guide
+
+## What This Is
+
+A static-site AI explainer app. 323 terms across 15 categories. Plain-English explanations with interactive visuals. No backend, no framework — just HTML, CSS, and JavaScript.
+
+## Tech Stack
+
+- **HTML5** — `index.html` (app shell)
+- **CSS** — Tailwind CSS v4 (`npm run build` compiles `src/input.css` → `styles.css`), plus hand-written CSS files in `css/`
+- **JavaScript** — vanilla JS (no frameworks) in `scripts.js` and `visuals-ai-basics.js`
+- **Diagrams** — Mermaid.js (loaded from CDN; renders flow/sequence/architecture diagrams at runtime from text definitions)
+- **Data** — `data/terms.json` (all term content, single source of truth)
+
+## Key Files
+
+| File | Purpose |
+|------|---------|
+| `index.html` | App shell with topbar, sidebar, content area, footer, drawer menu |
+| `css/core.css` | Tailwind theme tokens + base reset |
+| `css/layout.css` | Topbar, sidebar, footer, search, drawer layout |
+| `css/term-view.css` | Welcome view, term hero, tabs, body, related terms |
+| `css/responsive.css` | Mobile breakpoints (768px and below) |
+| `css/signal.css` | Loading spinners, animations |
+| `scripts.js` | All JS: data loading, routing, sidebar, search, term rendering, interactive demos |
+| `visuals-ai-basics.js` | CSS-driven interactive demos (comparison cards, sliders, explainers) |
+| `data/terms.json` | All 323 terms with categories, difficulty, content, visuals config |
+| `src/input.css` | Tailwind v4 source (compiled with `npm run build`) |
+| `assets/` | Font Awesome icons, logo SVG, menu-toggle CSS/JS |
+
+## Content Model
+
+Each term in `terms.json` has this structure:
+
+```
+id, name, category, difficulty (beginner/intermediate/advanced),
+plainEnglish, analogy, howItWorks, inPractice, buildIt,
+relatedTerms, keyPoints, tagline, status (complete/draft), visual
+```
+
+**Status**: 38 terms are `"complete"`, 285 are `"draft"` (placeholder content). New terms should be added to `terms.json` with `"status": "draft"` until full content is written.
+
+## Routing
+
+Hash-based: `#term-id`. The hash matches the `id` field in `terms.json`. Legacy short IDs are mapped to current IDs via `ID_MAP` in `scripts.js`.
+
+## Running Locally
+
+`terms.json` is loaded via `fetch()` — it won't work from `file://`. Use a local server:
+
+```
+npx serve .
+```
+or
+```
+python -m http.server 4400
+```
+
+## Conventions
+
+- No frameworks — pure vanilla JavaScript
+- All content lives in `terms.json` — never hardcode term data in HTML or JS
+- CSS uses Tailwind v4 `@apply` directives in `src/input.css`; custom styles go in the `css/` files
+- Font stack: Titillium Web (UI/headings), Inter (body), JetBrains Mono (code)
+- Color scheme: dark theme (`#07090f` background), green accent (`#00e5a0`)
+- Edits should preserve the no-build static-site approach
+
+## Visual Strategy
+
+No hand-coded SVG or Canvas. Two approaches only:
+
+1. **Mermaid.js** for flow/architecture diagrams. Define as text in `data.visual === "mermaid"` with the diagram source in a `mermaid` field. Mermaid renders at runtime.
+2. **CSS-driven interactivity** for hands-on demos (comparison cards, sliders, click-to-reveal, animated bars). Write as pure HTML/CSS in `visuals-ai-basics.js` — no coordinate math, no canvas.
+
+Only add a visual where it genuinely clarifies a concept (~20-30 terms max). Most terms don't need one. The tokenizer in `scripts.js` is the one exception (text-based, not SVG).
