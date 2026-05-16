@@ -6,8 +6,6 @@ AGENTS.md
 server-*.log
 TERMS_CATALOG.md
 made-with-love.js
-package-lock.json
-package.json
 .claude/
 backups/
 visuals-ai-basics.js
